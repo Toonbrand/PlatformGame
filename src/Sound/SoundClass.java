@@ -8,7 +8,7 @@ public class SoundClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		String bip = "bip.mp3";
+		String bip = "Nyan.mp3";
 		Media hit = new Media(bip);
 		MediaPlayer mediaPlayer = new MediaPlayer(hit);
 		mediaPlayer.play();
