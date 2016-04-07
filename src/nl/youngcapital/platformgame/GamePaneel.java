@@ -22,7 +22,7 @@ public class GamePaneel extends JPanel{
 		int rectsize=25;
 	//	System.out.println("bla");
 		
-		for(int i=0;i<16;i++) {
+		for(int i=0;i<gameworld.length;i++) {
 		//	System.out.println(gameworld[i].set);
 			for (int j=0;j<3;j++) {
 			

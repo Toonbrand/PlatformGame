@@ -21,16 +21,15 @@ public class Test {
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		//for(int i=0;i<10;i++) {
-			
-		//Timer timer = new Timer(100, e);
-		
+
 
 		frame.add(new GamePaneel(100,getworld));
 		
 		JFrame.setDefaultLookAndFeelDecorated(true);
-		}
+		
 
 	}
+	
+	
 
 }
