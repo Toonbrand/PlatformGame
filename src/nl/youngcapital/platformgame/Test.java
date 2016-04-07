@@ -1,7 +1,25 @@
 package nl.youngcapital.platformgame;
 
 import javax.swing.JFrame;
-public class Test{
+import javax.swing.JLabel;
+import javax.swing.Timer;
+
+import Sound.SoundClass;
+
+import java.awt.BorderLayout;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import javax.swing.*;
+public class Test {
 	
 	
 	static int width=1000;
@@ -13,6 +31,7 @@ public class Test{
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame("FrameDemo");
 		Character c = new Character(0,0);
+		SoundClass sound = new SoundClass();
 		
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,6 +40,8 @@ public class Test{
 
 		//frame.getContentPane().add(c.createCharacter());
 		frame.add(new GamePaneel(0,getworld,c));
+		
+//		sound.PlaySound();
 		
 		frame.setVisible(true);
 		
