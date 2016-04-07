@@ -7,16 +7,17 @@ import javafx.scene.media.MediaPlayer;
 
 
 public class SoundClass {
+	
+	static private MediaPlayer mediaPlayer;
+	JFXPanel fxPanel = new JFXPanel();
 
-	public static void main(String[] args) {
-		JFXPanel fxPanel = new JFXPanel();
-
-		SoundClass s = new SoundClass();
+	public static void PlaySound(){
 		
-		String bip = s.getClass().getResource("/Sound/Nyan.mp3").toString();
+		String bip = "file:/C:/Users/Student/git/PlatformGame/bin/Sound/Nyan.mp3";
 		System.out.println(bip);
 		Media hit = new Media(bip);
-		MediaPlayer mediaPlayer = new MediaPlayer(hit);
+		mediaPlayer = new MediaPlayer(hit);
+		
 		mediaPlayer.play();
 		
 	}

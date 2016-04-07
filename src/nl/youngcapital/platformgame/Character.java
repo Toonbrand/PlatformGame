@@ -1,3 +1,7 @@
+
+
+
+
 package nl.youngcapital.platformgame;
 
 import java.awt.BorderLayout;
@@ -16,15 +20,15 @@ import javax.swing.*;
 
 public class Character extends JPanel{
 	
-	int posX = 0;
-	int posY = 0;
-	String path="Sprites/pikachu.png";
+	int posX;
+	int posY;
 
+
+	
 	
 	Character(int posX, int posY) {
 		this.posX = posX;
 		this.posY = posY;
-		
 	}
 
 	public JLabel createCharacter() throws IOException
@@ -36,7 +40,11 @@ public class Character extends JPanel{
 		return label;
 	
 	}
+	
+	public void move(int direction){
+		posX += direction;
+		repaint();
+	}
 
 }
-
 
