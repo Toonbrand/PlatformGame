@@ -16,8 +16,8 @@ import javax.swing.*;
 
 public class Character extends JPanel{
 	
-	int posX = 0;
-	int posY = 0;
+	int posX;
+	int posY;
 
 
 	
@@ -35,6 +35,11 @@ public class Character extends JPanel{
 	    JLabel label = new JLabel(new ImageIcon(image));
 		return label;
 	
+	}
+	
+	public void move(int direction){
+		posX += direction;
+		repaint();
 	}
 
 }

@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 public class Test{
 	
 	
-	static int width=500;
+	static int width=1000;
 	static int height=500;
 	static final GameWorld world=new GameWorld();
 	static Tileset[] getworld=world.getGameWorld();
@@ -20,7 +20,7 @@ public class Test{
 		//for(int i=0;i<10;i++) {
 
 		//frame.getContentPane().add(c.createCharacter());
-		frame.add(new GamePaneel(100,getworld,c));
+		frame.add(new GamePaneel(0,getworld,c));
 		
 		frame.setVisible(true);
 		
