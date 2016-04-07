@@ -6,13 +6,18 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class GamePaneel extends JPanel{
-
+	int x;
+	Tileset[] gameworld;
+	GamePaneel(int x,Tileset[] world) {
+		this.x=x;
+		this.gameworld=world;
+	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		
-		Tileset[] gameworld=Test.world.getGameWorld();
-		GameWorld bla=Test.world;
-	//	Tileset[] gameworld=
+	//	Tileset[] gameworld=Test.world.getGameWorld();
+	//	GameWorld bla=Test.world;
+	//	Tileset[] gameworld=world.
 		
 		int rectsize=25;
 	//	System.out.println("bla");
