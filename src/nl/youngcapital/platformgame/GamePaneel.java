@@ -2,7 +2,14 @@ package nl.youngcapital.platformgame;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class GamePaneel extends JPanel{
@@ -12,17 +19,36 @@ public class GamePaneel extends JPanel{
 		this.x=x;
 		this.gameworld=world;
 	}
-	public void paintComponent(Graphics g){
-		super.paintComponent(g);
+	
+	
+	
+	public void paintComponent(Graphics g) {
+		
+		int rectsize=100;
+		Graphics2D g2 = (Graphics2D) g;
+		
+		super.paintComponent(g);		
+		String path = "Sprites/pikachu.png";
+	    File file = new File(path);
+	    BufferedImage image;
+		try {
+			image = ImageIO.read(file);
+			int size = 50;
+			g2.drawImage(image, getWidth()/2-size/2, getHeight() - size - rectsize *3  , size, size, this); 
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 
 		
 	//	Tileset[] gameworld=Test.world.getGameWorld();
 	//	GameWorld bla=Test.world;
 	//	Tileset[] gameworld=world.
 		
-		int rectsize=25;
+
 	//	System.out.println("bla");
 		
-		for(int i=0;i<16;i++) {
+		for(int i=0;i<gameworld.length;i++) {
 		//	System.out.println(gameworld[i].set);
 			for (int j=0;j<3;j++) {
 			

@@ -2,25 +2,41 @@ package nl.youngcapital.platformgame;
 
 import java.awt.BorderLayout;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Character extends JPanel {
+import javax.swing.*;
+
+public class Character extends JPanel{
 	
 	int posX = 0;
 	int posY = 0;
+
+
 	
+	
+	Character(int posX, int posY) {
+		this.posX = posX;
+		this.posY = posY;
+	}
 
-	public static void main(String[] args) {
-
-		ImageIcon person = new ImageIcon("/Sprites/pikachu.png");
-		JLabel label = new JLabel("", person, JLabel.CENTER);
-		JPanel panel = new JPanel(new BorderLayout());
-		panel.add( label, BorderLayout.CENTER );
-		
+	public JLabel createCharacter() throws IOException
+	{
+		String path = "Sprites/pikachu.png";
+	    File file = new File(path);
+	    BufferedImage image = ImageIO.read(file);
+	    JLabel label = new JLabel(new ImageIcon(image));
+		return label;
+	
 	}
 
 }
+
+
