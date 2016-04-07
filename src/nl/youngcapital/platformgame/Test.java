@@ -41,7 +41,8 @@ public class Test {
 		//for(int i=0;i<10;i++) {
 
 		//frame.getContentPane().add(c.createCharacter());
-		frame.add(new GamePaneel(100,getworld));
+		frame.add(new GamePaneel(100,getworld,c))
+		;
 		
 		frame.setVisible(true);
 

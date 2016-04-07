@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 public class GamePaneel extends JPanel{
 	int x;
 	Tileset[] gameworld;
-	GamePaneel(int x,Tileset[] world) {
+	GamePaneel(int x,Tileset[] world, Character c) {
 		this.x=x;
 		this.gameworld=world;
 	}
