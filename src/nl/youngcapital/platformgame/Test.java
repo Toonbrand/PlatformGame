@@ -2,8 +2,10 @@ package nl.youngcapital.platformgame;
 
 import java.awt.event.ActionEvent;
 
+
 import javax.swing.JFrame;
 import javax.swing.Timer;
+
 public class Test {
 	
 	
@@ -23,10 +25,12 @@ public class Test {
 			
 		//Timer timer = new Timer(100, e);
 		
+
 		frame.add(new GamePaneel(100,getworld));
 		
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		}
+
 	}
 
 }

@@ -10,9 +10,11 @@ public class DrawTest {
 		JFrame frame=new JFrame();
 		 frame.setSize(300, 300);
 		 
-		public void paintComponent(Graphics g) {
-			g.setColor(Color.BLUE);
-			g.fillRect(0, 100, 100, 100);
-		}
+
+	}
+	
+	public void paintComponent(Graphics g) {
+		g.setColor(Color.BLUE);
+		g.fillRect(0, 100, 100, 100);
 	}
 }
