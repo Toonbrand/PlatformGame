@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
+import Sound.SoundClass;
+
 import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -34,6 +36,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame("FrameDemo");
 		Character c = new Character(0,0);
+		SoundClass sound = new SoundClass();
 		
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,6 +46,8 @@ public class Test {
 		//frame.getContentPane().add(c.createCharacter());
 		frame.add(new GamePaneel(100,getworld,c))
 		;
+		
+		sound.PlaySound();
 		
 		frame.setVisible(true);
 
