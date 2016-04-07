@@ -2,34 +2,60 @@ package nl.youngcapital.platformgame;
 
 import java.awt.event.ActionEvent;
 
-
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.Timer;
 
+import java.awt.BorderLayout;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import javax.swing.*;
 public class Test {
 	
 	
-	static int width=1000;
+	static int width=1900;
 	static int height=1000;
 	static final GameWorld world=new GameWorld();
 	static Tileset[] getworld=world.getGameWorld();
 	
-	public static void main(String[] args) {
+	
+	
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame("FrameDemo");
+		Character c = new Character(0,100);
 		
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 		frame.setVisible(true);
 
 
-		frame.add(new GamePaneel(100,getworld));
+
+		//for(int i=0;i<10;i++) {
+
+		//frame.getContentPane().add(c.createCharacter());
+		frame.add(new GamePaneel(100,getworld,c))
+		;
+		
+		frame.setVisible(true);
+
 		
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		
 
 	}
+}
 	
 	
 
-}

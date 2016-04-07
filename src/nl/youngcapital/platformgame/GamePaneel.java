@@ -2,24 +2,52 @@ package nl.youngcapital.platformgame;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class GamePaneel extends JPanel{
 	int x;
 	Tileset[] gameworld;
-	GamePaneel(int x,Tileset[] world) {
+	Character c;
+	GamePaneel(int x,Tileset[] world, Character c) {
 		this.x=x;
 		this.gameworld=world;
+		this.c=c;
 	}
-	public void paintComponent(Graphics g){
-		super.paintComponent(g);
+	
+	
+	
+	public void paintComponent(Graphics g) {
+		
+		int rectsize=100;
+		Graphics2D g2 = (Graphics2D) g;
+		
+		super.paintComponent(g);		
+		String path = c.path;
+	    File file = new File(path);
+	    BufferedImage image;
+		try {
+			image = ImageIO.read(file);
+			int size = 50;
+			g2.drawImage(image, c.posX-size/2, getHeight() - size - c.posY  , size, size, this); 
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 
 		
 	//	Tileset[] gameworld=Test.world.getGameWorld();
 	//	GameWorld bla=Test.world;
 	//	Tileset[] gameworld=world.
 		
-		int rectsize=25;
+
 	//	System.out.println("bla");
 		
 		for(int i=0;i<gameworld.length;i++) {
