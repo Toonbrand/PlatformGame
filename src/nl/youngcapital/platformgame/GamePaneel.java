@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +17,7 @@ public class GamePaneel extends JPanel implements KeyListener{
 	int x;
 	Tileset[] gameworld;
 	Character c;
+
 	GamePaneel(int x,Tileset[] world, Character c) {
 		this.x=x;
 		this.c=c;
@@ -25,18 +27,20 @@ public class GamePaneel extends JPanel implements KeyListener{
 		setFocusable(true);
 		requestFocus();
 	}
-
-
+	
+	AffineTransform transform = new AffineTransform(); 
+	String path = "Sprites/pikachu.png";
+	BufferedImage image;
 
 	public void paintComponent(Graphics g) {
-
-		int rectsize=100;
-		Graphics2D g2 = (Graphics2D) g;
-
+	     
 		super.paintComponent(g);		
-		String path = "Sprites/pikachu.png";
+		
+		
+		Graphics2D g2 = (Graphics2D) g;
+		int rectsize=100;
 		File file = new File(path);
-		BufferedImage image;
+		
 		try {
 			image = ImageIO.read(file);
 			int size = 50;
@@ -105,7 +109,15 @@ public class GamePaneel extends JPanel implements KeyListener{
 			case KeyEvent.VK_RIGHT : x = x - 10;
 			System.out.println(x);
 			break;
-			case KeyEvent.VK_LEFT : x = x + 10;
+			case KeyEvent.VK_LEFT : {x = x + 10;
+			
+		    transform.setToTranslation(-1, -1);
+             
+		    transform.scale(-1, 1);
+            transform.translate(- image.getWidth(), 0);
+            Graphics2D g2 = (Graphics2D) g;
+            g.drawImage(image,transform,null); 
+			}
 		}
 		repaint();
 	}
