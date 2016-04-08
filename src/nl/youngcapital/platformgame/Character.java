@@ -1,3 +1,7 @@
+
+
+
+
 package nl.youngcapital.platformgame;
 
 import java.awt.BorderLayout;
@@ -63,5 +67,4 @@ public class Character extends JPanel{
 	}
 
 }
-
 

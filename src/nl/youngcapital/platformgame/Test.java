@@ -30,11 +30,19 @@ public class Test {
 	public static void main(String[] args){
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame("FrameDemo");
+
+	
+
 		Character c = new Character(0,0);
 		SoundClass sound = new SoundClass();
+
 		
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		frame.setVisible(true);
+
+
 
 		//for(int i=0;i<10;i++) {
 
@@ -48,9 +56,12 @@ public class Test {
 		
 		
 		JFrame.setDefaultLookAndFeelDecorated(true);
-		}
+		
 
 
 
 	}
+}
+	
+	
 

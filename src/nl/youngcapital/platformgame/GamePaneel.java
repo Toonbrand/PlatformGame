@@ -23,9 +23,11 @@ public class GamePaneel extends JPanel implements KeyListener{
 		this.c=c;
 		this.gameworld=world;
 
+
 		addKeyListener(this);
 		setFocusable(true);
 		requestFocus();
+
 	}
 	
 	AffineTransform transform = new AffineTransform(); 
@@ -35,15 +37,26 @@ public class GamePaneel extends JPanel implements KeyListener{
 	public void paintComponent(Graphics g) {
 	     
 		super.paintComponent(g);		
+<<<<<<< HEAD
 		
 		
 		Graphics2D g2 = (Graphics2D) g;
 		int rectsize=100;
+=======
+
+		String path = "Sprites/pikachu.png";
+>>>>>>> branch 'master' of https://github.com/Toonbrand/PlatformGame.git
 		File file = new File(path);
+<<<<<<< HEAD
 		
+=======
+		BufferedImage image;
+
+>>>>>>> branch 'master' of https://github.com/Toonbrand/PlatformGame.git
 		try {
 			image = ImageIO.read(file);
 			int size = 50;
+
 			g2.drawImage(image, c.posX, getHeight() - 200 - size - c.posY  , size, size, this); 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -57,7 +70,7 @@ public class GamePaneel extends JPanel implements KeyListener{
 
 
 		//	System.out.println("bla");
-		//System.out.println(x);
+		System.out.println(x);
 		
 		for(int i=0;i<gameworld.length;i++) {
 			for (int j=0;j<3;j++) {
